@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django
+  labels:
+    app: nick-django
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nick-django
+  template:
+    metadata:
+      labels:
+        app: nick-django
+    spec:
+      containers:
+      - name: naman
+        image: naman1409/namanrepo1
+        ports:
+        - containerPort: 8000
